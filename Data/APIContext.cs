@@ -22,6 +22,16 @@ namespace API_Fase2.Data
                 .WithMany(estabelecimento => estabelecimento.Estoques)
                 .HasForeignKey(estoque => estoque.EstabelecimentoId);
 
+            builder.Entity<ProdutoLista>()
+                .HasOne(produtolista => produtolista.Produto)
+                .WithMany(produto => produto.ProdutosLista)
+                .HasForeignKey(produtolista => produtolista.ProdutoId);
+
+            builder.Entity<ProdutoLista>()
+                .HasOne(produtolista => produtolista.Lista)
+                .WithMany(lista => lista.ProdutosLista)
+                .HasForeignKey(produtolista => produtolista.ListaId);
+
         }
 
         public DbSet<Estabelecimento> Estabelecimentos { get; set; }
@@ -29,6 +39,10 @@ namespace API_Fase2.Data
         public DbSet<Produto> Produtos { get; set; }
 
         public DbSet<Estoque> Estoques { get; set; }
+
+        public DbSet<Lista> Listas { get; set; }
+
+        public DbSet<ProdutoLista> ProdutosLista { get; set; }
 
     }
 }

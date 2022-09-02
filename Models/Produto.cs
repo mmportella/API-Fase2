@@ -21,5 +21,8 @@ namespace API_Fase2.Models
         [JsonIgnore]
         public virtual List<Estoque> Estoques { get; set; }
 
+        [JsonIgnore]
+        public virtual List<ProdutoLista> ProdutosLista { get; set; }
+
     }
 }

@@ -16,7 +16,7 @@ namespace API_Fase2.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("ProductVersion", "6.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -72,10 +72,10 @@ namespace API_Fase2.Migrations
                     b.Property<int>("ProdutoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("quantidade")
+                    b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<double>("valor")
+                    b.Property<double>("Valor")
                         .HasColumnType("float");
 
                     b.HasKey("IdEstoque");
@@ -85,6 +85,24 @@ namespace API_Fase2.Migrations
                     b.HasIndex("ProdutoId");
 
                     b.ToTable("Estoques");
+                });
+
+            modelBuilder.Entity("API_Fase2.Models.Lista", b =>
+                {
+                    b.Property<int>("IdLista")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdLista"), 1L, 1);
+
+                    b.Property<string>("NomeLista")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("IdLista");
+
+                    b.ToTable("Listas");
                 });
 
             modelBuilder.Entity("API_Fase2.Models.Produto", b =>
@@ -110,6 +128,32 @@ namespace API_Fase2.Migrations
                     b.ToTable("Produtos");
                 });
 
+            modelBuilder.Entity("API_Fase2.Models.ProdutoLista", b =>
+                {
+                    b.Property<int>("IdProdutoLista")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProdutoLista"), 1L, 1);
+
+                    b.Property<int>("ListaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdProdutoLista");
+
+                    b.HasIndex("ListaId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("ProdutosLista");
+                });
+
             modelBuilder.Entity("API_Fase2.Models.Estoque", b =>
                 {
                     b.HasOne("API_Fase2.Models.Estabelecimento", "Estabelecimento")
@@ -129,14 +173,40 @@ namespace API_Fase2.Migrations
                     b.Navigation("Produto");
                 });
 
+            modelBuilder.Entity("API_Fase2.Models.ProdutoLista", b =>
+                {
+                    b.HasOne("API_Fase2.Models.Lista", "Lista")
+                        .WithMany("ProdutosLista")
+                        .HasForeignKey("ListaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("API_Fase2.Models.Produto", "Produto")
+                        .WithMany("ProdutosLista")
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lista");
+
+                    b.Navigation("Produto");
+                });
+
             modelBuilder.Entity("API_Fase2.Models.Estabelecimento", b =>
                 {
                     b.Navigation("Estoques");
                 });
 
+            modelBuilder.Entity("API_Fase2.Models.Lista", b =>
+                {
+                    b.Navigation("ProdutosLista");
+                });
+
             modelBuilder.Entity("API_Fase2.Models.Produto", b =>
                 {
                     b.Navigation("Estoques");
+
+                    b.Navigation("ProdutosLista");
                 });
 #pragma warning restore 612, 618
         }

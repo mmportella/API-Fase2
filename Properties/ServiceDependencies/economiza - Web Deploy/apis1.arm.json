@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('api-fase2', subscription().subscriptionId)))]",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('economiza', subscription().subscriptionId)))]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "apiVersion": "2019-10-01",
       "dependsOn": [
@@ -49,17 +49,17 @@
           "contentVersion": "1.0.0.0",
           "resources": [
             {
-              "name": "api-mgmt-fase2",
+              "name": "economiza-apimgmt",
               "type": "Microsoft.ApiManagement/service",
               "location": "[parameters('resourceLocation')]",
               "properties": {
                 "publisherEmail": "marcelomportella@icloud.com",
-                "publisherName": "FIAP",
+                "publisherName": "fiap",
                 "notificationSenderEmail": "apimgmt-noreply@mail.windowsazure.com",
                 "hostnameConfigurations": [
                   {
                     "type": "Proxy",
-                    "hostName": "api-mgmt-fase2.azure-api.net",
+                    "hostName": "economiza-apimgmt.azure-api.net",
                     "encodedCertificate": null,
                     "keyVaultId": null,
                     "certificatePassword": null,
@@ -68,21 +68,17 @@
                     "defaultSslBinding": true
                   }
                 ],
-                "publicIPAddresses": [
-                  "20.85.188.247"
-                ],
+                "publicIPAddresses": null,
                 "privateIPAddresses": null,
                 "additionalLocations": null,
                 "virtualNetworkConfiguration": null,
                 "customProperties": {
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls11": "false",
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10": "false",
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls11": "false",
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls10": "false",
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Ssl30": "false",
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Protocols.Server.Http2": "false",
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TripleDes168": "false",
-                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Ssl30": "false"
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls11": "true",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10": "true",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls11": "true",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls10": "true",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Ssl30": "true",
+                  "Microsoft.WindowsAzure.ApiManagement.Gateway.Protocols.Server.Http2": "true"
                 },
                 "virtualNetworkType": "None",
                 "certificates": null,
@@ -92,16 +88,16 @@
                 }
               },
               "sku": {
-                "name": "Developer",
-                "capacity": 1
+                "name": "Consumption",
+                "capacity": 0
               },
               "apiVersion": "2019-12-01"
             },
             {
               "type": "Microsoft.ApiManagement/service/apis",
-              "name": "api-mgmt-fase2/api-fase2",
+              "name": "economiza-apimgmt/economiza",
               "properties": {
-                "displayName": "API-Fase2",
+                "displayName": "economiza",
                 "apiRevision": "1",
                 "description": "",
                 "subscriptionRequired": true,
@@ -122,7 +118,7 @@
               },
               "apiVersion": "2019-12-01",
               "dependsOn": [
-                "api-mgmt-fase2"
+                "economiza-apimgmt"
               ]
             }
           ]

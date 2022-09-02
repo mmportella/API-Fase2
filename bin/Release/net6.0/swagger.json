@@ -1,0 +1,807 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API-Fase2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Estabelecimento": {
+      "post": {
+        "tags": [
+          "Estabelecimento"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateEstabelecimentoDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Estabelecimento"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Estabelecimento/{id}": {
+      "get": {
+        "tags": [
+          "Estabelecimento"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Estabelecimento"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateEstabelecimentoDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Estabelecimento"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Estoque": {
+      "post": {
+        "tags": [
+          "Estoque"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateEstoqueDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Estoque"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Estoque/{id}": {
+      "get": {
+        "tags": [
+          "Estoque"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Estoque"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateEstoqueDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Estoque"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Estoque/compara/{id}": {
+      "get": {
+        "tags": [
+          "Estoque"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Lista": {
+      "post": {
+        "tags": [
+          "Lista"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateListaDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Lista"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Lista/{id}": {
+      "get": {
+        "tags": [
+          "Lista"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Lista"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateListaDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Lista"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Produto": {
+      "post": {
+        "tags": [
+          "Produto"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateProdutoDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Produto"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Produto/{id}": {
+      "get": {
+        "tags": [
+          "Produto"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Produto"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateProdutoDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Produto"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/ProdutoLista": {
+      "post": {
+        "tags": [
+          "ProdutoLista"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateProdutoListaDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "ProdutoLista"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/ProdutoLista/{id}": {
+      "get": {
+        "tags": [
+          "ProdutoLista"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProdutoLista"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateProdutoListaDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProdutoLista"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateEstabelecimentoDTO": {
+      "required": [
+        "cep",
+        "cidade",
+        "cnpj",
+        "logradouro",
+        "nomeEstabelecimento",
+        "numero"
+      ],
+      "type": "object",
+      "properties": {
+        "cnpj": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nomeEstabelecimento": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "logradouro": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "numero": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "cidade": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "cep": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "CreateEstoqueDTO": {
+      "required": [
+        "estabelecimentoId",
+        "produtoId",
+        "quantidade",
+        "valor"
+      ],
+      "type": "object",
+      "properties": {
+        "estabelecimentoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "produtoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "valor": {
+          "format": "double",
+          "type": "number"
+        },
+        "quantidade": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "CreateListaDTO": {
+      "required": [
+        "nomeLista"
+      ],
+      "type": "object",
+      "properties": {
+        "nomeLista": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        }
+      }
+    },
+    "CreateProdutoDTO": {
+      "required": [
+        "marca",
+        "nomeProduto"
+      ],
+      "type": "object",
+      "properties": {
+        "marca": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "nomeProduto": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        }
+      }
+    },
+    "CreateProdutoListaDTO": {
+      "required": [
+        "listaId",
+        "produtoId",
+        "quantidade"
+      ],
+      "type": "object",
+      "properties": {
+        "listaId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "produtoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "quantidade": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "UpdateEstabelecimentoDTO": {
+      "required": [
+        "cep",
+        "cidade",
+        "cnpj",
+        "logradouro",
+        "nomeEstabelecimento",
+        "numero"
+      ],
+      "type": "object",
+      "properties": {
+        "cnpj": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nomeEstabelecimento": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "logradouro": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "numero": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "cidade": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "cep": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "UpdateEstoqueDTO": {
+      "required": [
+        "quantidade",
+        "valor"
+      ],
+      "type": "object",
+      "properties": {
+        "estabelecimentoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "produtoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "valor": {
+          "format": "double",
+          "type": "number"
+        },
+        "quantidade": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "UpdateListaDTO": {
+      "required": [
+        "nomeLista"
+      ],
+      "type": "object",
+      "properties": {
+        "nomeLista": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        }
+      }
+    },
+    "UpdateProdutoDTO": {
+      "required": [
+        "marca",
+        "nomeProduto"
+      ],
+      "type": "object",
+      "properties": {
+        "marca": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "nomeProduto": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        }
+      }
+    },
+    "UpdateProdutoListaDTO": {
+      "required": [
+        "listaId",
+        "produtoId",
+        "quantidade"
+      ],
+      "type": "object",
+      "properties": {
+        "listaId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "produtoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "quantidade": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

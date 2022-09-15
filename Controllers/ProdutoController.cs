@@ -2,6 +2,10 @@
 using API_Fase2.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Reflection;
+using System.Xml.Linq;
 
 namespace API_Fase2.Controllers
 {
@@ -56,6 +60,22 @@ namespace API_Fase2.Controllers
                 return Ok(produtoDTO);
             }
             return NotFound();
+        }
+
+        [HttpGet("nome/{nome}")]
+        public IActionResult GetProdutoByNome(string nome)
+        {
+            if (!string.IsNullOrEmpty(nome))
+            {
+                IQueryable<Produto> query = _context.Produtos;
+                query = query.Where(e => e.NomeProduto.Contains(nome));
+                List<ReadProdutoDTO> readDTO = _mapper.Map<List<ReadProdutoDTO>>(query.ToList());
+                return Ok(readDTO);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpPut("{id}")]

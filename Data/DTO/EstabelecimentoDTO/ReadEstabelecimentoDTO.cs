@@ -10,7 +10,7 @@ namespace API_Fase2.Data.DTO.EstabelecimentoDTO
         public int IdEstabelecimento { get; set; }
 
         [Required]
-        public int Cnpj { get; set; }
+        public long Cnpj { get; set; }
 
         [Required(ErrorMessage = "O campo NomeEstabelecimento é obrigatório.")]
         [StringLength(50, ErrorMessage = "O tamanho máximo do campo é 50 caracteres.")]
